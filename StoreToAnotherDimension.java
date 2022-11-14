@@ -1,333 +1,255 @@
-package com.mycompany.storetoanotherdimension;
-
+ackage StoreToAnotherDimension;
 import java.util.Scanner;
-import javax.sound.midi.Soundbank;
 
-/**
- *
- * @author ADMIN
- */
 public class StoreToAnotherDimension {
+        public static Scanner input = new Scanner(System.in);
+        public static String again;
+        public static int discount = 1;
+        public static int choose, quantity = 1;
+        public static double total = 0, pay;
 
-    public static Scanner input = new Scanner(System.in);
-    public static String x;
-    public static int x1, x_1 = 1;
-    public static double x2 = 0, x_2;
-    public static int x3, x_3;
+        public static void GOODSHEESH() {
 
-    public static void GoodSheesh() {
-        System.out.println("THE STORE TO ANOTHER DIMENSION");
-        System.out.println("┈╭━━━━━━━━━━━╮┈\n" +
-"┈┃╭━━━╮┊╭━━━╮┃┈\n" +
-"╭┫┃┈▇┈┃┊┃┈▇┈┃┣╮\n" +
-"┃┃╰━━━╯┊╰━━━╯┃┃\n" +
-"╰┫╭━╮╰━━━╯╭━╮┣╯\n" +
-"┈┃┃┣┳┳┳┳┳┳┳┫┃┃┈\n" +
-"┈┃┃╰┻┻┻┻┻┻┻╯┃┃┈\n" +
-"┈╰━━━━━━━━━━━╯┈");
-        System.out.println("[STORE CLERK]: SUP DUDE!, WELCOME TO THE STORE");
-        System.out.println("WE CURRENTLY HAVE PROMOS HERE");
-        System.out.println("IF YOU BUY 2 SAME EXACT ITEMS, YOU'LL GET A 10% DISCOUNT");
-        System.out.println("IF YOU BUY 3 SAME EXACT ITEMS, YOU'LL GET A 20% DISCOUNT");
-        System.out.println("JUST CHOOSE WHATEVER YOU WANT");
-        System.out.println("====================================================");
-        System.out.println("1: Shabu - $5000\n" + "2: Marijuana - $2000\n" + "3: Cocaine - $3000\n" + "4: Rugby - $150\n" + "5: Vulca Seal - $50");
-        System.out.println("====================================================");
-    }
-
-    public static void order() {
-       x2 = 0;
-          System.out.println("----------------------------------------------------");
-        System.out.println("[CASHIER]: SUP BRO, WHAT DO YOU WANT? JUST CHOOSE");
-        System.out.println("----------------------------------------------------");
-        System.out.println("Press 1 for Shabu, Press 2 for Marijuana, Press 3 for Cocaine, Press 4 for Rugby, Press 5 for Vulca Seal");
-        System.out.println("----------------------------------------------------");
-        System.out.print("[CASHIER]: Do you want to buy?, Just press the numbers: ");
-        x1 = input.nextInt();
-
-        if (x1 == 1) {
-              System.out.println("----------------------------------------------------");
-            System.out.println("The customer choose Shabu");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: How many Shabu's do you want?: ");
-            x_1 = input.nextInt();
-            x2 = x2 + (x_1 * 5000);
-
-            if (x_1 == 2) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 10% discount");
-                x2 = x2 * .90;
-
-            } else if (x_1 == 3) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 20% discount");
-                x2 = x2 * .80;
-            }
-          
-            System.out.println(" [CASHIER]: You want to buy again?");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: Press Y if YES and N if NO: ");
-            x = input.next();
-            if (x.equalsIgnoreCase("Y")) {
-                order();
-
-            } else {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[SYSTEM]: Enter cash payment");
-                x_2 = input.nextDouble();
-                if (x_2 <= x2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Insufficient cash");
-                      System.out.println("----------------------------------------------------");
-                    System.out.println(" (　-_･) ︻デ═一 ▸");
-                    System.out.println("The store owner kicked the customer out of the store");
-                } else {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Price" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Change" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[CASHIER]: Next customer please\n" + "Press 1 to proceed otherwise press 2");
-                    x3 = input.nextInt();
-                }
-                if (x3 == 1) {
-                    order();
-
-                } else if (x3 == 2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[STORE CLERK]: Great, now we can relaw and chill");
-                }
-            }
-
-        } else if (x1 == 2) {
-              System.out.println("----------------------------------------------------");
-            System.out.println("The customer choose Marijuana");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: How many Marijuana's do you want?: ");
-            x_1 = input.nextInt();
-            x2 = x2 + (x_1 * 2000);
-
-            if (x_1 == 2) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 10% discount");
-                x2 = x2 * .90;
-            } else if (x_1 == 3) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 20% discount");
-                x2 = x2 * .80;
-            }
-            System.out.println("[CASHIER]: You want to buy again?");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: Press Y if YES and N if NO: ");
-            x = input.next();
-            if (x.equalsIgnoreCase("Y")) {
-                order();
-
-            } else {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[SYSTEM]: Enter cash payment");
-                x_2 = input.nextDouble();
-                if (x_2 <= x2) {
-                    
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Insufficient cash");
-                    System.out.println("----------------------------------------------------");
-                    System.out.println(" (　-_･) ︻デ═一 ▸");
-                    System.out.println("The store owner kicked the customer out of the store");
-                } else {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Price" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Change" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[CASHIER]: Next customer please\n" + "Press 1 to proceed otherwise press 2");
-                    x3 = input.nextInt();
-                }
-                if (x3 == 1) {
-                    order();
-
-                } else if (x3 == 2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[STORE CLERK]: Great, now we can relaw and chill");
-                }
-
-            }
-        } else if (x1 == 3) {
-              System.out.println("----------------------------------------------------");
-            System.out.println("The customer choose Cocaine");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: How many Cocane's do you want?: ");
-            x_1 = input.nextInt();
-            x2 = x2 + (x_1 * 3000);
-
-            if (x_1 == 2) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 10% discount");
-                x2 = x2 * .90;
-            } else if (x_1 == 3) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 20% discount");
-                x2 = x2 * .80;
-            }
-             
-             System.out.println("[CASHIER]: You want to buy again?");
-               System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: Press Y if YES and N if NO: ");
-            x = input.next();
-            if (x.equalsIgnoreCase("Y")) {
-                order();
-
-            } else {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[SYSTEM]: Enter cash payment");
-                x_2 = input.nextDouble();
-                if (x_2 <= x2) {
-                    
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Insufficient cash");
-                      System.out.println("----------------------------------------------------");
-                      System.out.println(" (　-_･) ︻デ═一 ▸");
-                    System.out.println("The store owner kicked the customer out of the store");
-                } else {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Price" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Change" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[CASHIER]: Next customer please\n" + "Press 1 to proceed otherwise press 2");
-                    x3 = input.nextInt();
-                }
-                if (x3 == 1) {
-                    order();
-
-                } else if (x3 == 2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[STORE CLERK]: Great, now we can relaw and chill");
-                }
-            }
-
-
-        } else if (x1 == 4) {
-              System.out.println("----------------------------------------------------");
-            System.out.println("[CASHIER]: The customer choose Rugby");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: How many Rugbies do you want?: ");
-            x_1 = input.nextInt();
-            x2 = x2 + (x_1 * 150);
-
-            if (x_1 == 2) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 10% discount");
-                x2 = x2 * .90;
-            } else if (x_1 == 3) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 20% discount");
-                x2 = x2 * .80;
-            }
-     
-            System.out.println("[CASHIER]: You want to buy again?");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: Press Y if YES and N if NO: ");
-            x = input.next();
-            if (x.equalsIgnoreCase("Y")) {
-                order();
-
-            } else {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[SYSTEM]: Enter cash payment");
-                x_2 = input.nextDouble();
-                if (x_2 <= x2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Insufficient cash");
-                      System.out.println("----------------------------------------------------");
-                      System.out.println(" (　-_･) ︻デ═一 ▸");
-                     System.out.println("The store owner kicked the customer out of the store");
-                } else {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Price" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Change" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[CASHIER]: Next customer please\n" + "Press 1 to proceed otherwise press 2");
-                    x3 = input.nextInt();
-                }
-                if (x3 == 1) {
-                    order();
-
-                } else if (x3 == 2) {
-                      System.out.println("----------------------------------------------------");
-                   System.out.println("[STORE CLERK]: Great, now we can relaw and chill");
-                }
-
-            }
-        } else if (x1 == 5) {
-              System.out.println("----------------------------------------------------");
-            System.out.println("The customer choose Vulca Seal");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: How many Vulca Seal's do you want?: ");
-            x_1 = input.nextInt();
-            x2 = x2 + (x_1 * 50);
-
-            if (x_1 == 2) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 10% discount");
-                x2 = x2 * .90;
-            } else if (x_1 == 3) {
-                  System.out.println("----------------------------------------------------");
-                System.out.println("[CASHIER]: Thank you for availing on our promo, you got a 20% discount");
-                x2 = x2 * .80;
-            }
-            
-            System.out.println("[CASHIER]: You want to buy again?");
-              System.out.println("----------------------------------------------------");
-            System.out.print("[CASHIER]: Press Y if YES and N if NO: ");
-            x = input.next();
-            if (x.equalsIgnoreCase("Y")) {
-                order();
-
-            } else {
-  System.out.println("----------------------------------------------------");
-                System.out.println("[SYSTEM]: Enter cash payment");
-                x_2 = input.nextDouble();
-                if (x_2 <= x2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Insufficient cash");
-                      System.out.println("----------------------------------------------------");
-                      System.out.println(" (　-_･) ︻デ═一 ▸");
-                   System.out.println("The store owner kicked the customer out of the store");
-                } else {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Price" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[SYSTEM]: Total Change" + x2);
-                    x2 = x_2 - x2;
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[CASHIER]: Next customer please\n" + "Press 1 to proceed otherwise press 2");
-                    x3 = input.nextInt();
-                }
-                if (x3 == 1) {
-                    order();
-
-                } else if (x3 == 2) {
-                      System.out.println("----------------------------------------------------");
-                    System.out.println("[STORE CLERK]: Great, now we can relaw and chill");
-                }
-            }
+            System.out.println("=========================================");
+            System.out.println("1. SHABU       $. 5000");
+            System.out.println("2. MARIJUANA        $. 2000");
+            System.out.println("3. COCAINE      $. 3000");
+            System.out.println("4. RUGBY           $. 50");
+            System.out.println("5. VULCA SEAL   $. 150");
+            System.out.println("=========================================");
+            System.out.println("");
+            System.out.println("PROMO");
+            System.out.println("Total order of $ 10000 or more, get 1 set of paraphernalia toolss");
+            System.out.println("Total order of $ 20000 or more, get 1 set of paraphernalia and 1 box of Flakka Drugs");
+            System.out.println(" NOTE: You can only get Flakka Drugs when you avail on our promo");
+            System.out.println(" You can avail both promos at the same time.");
+            System.out.println("");
+            System.out.println("DISCOUNTS");
+            System.out.println("D1 - Membership discount ( 10% off )");
+            System.out.println("D2 - First purchase discount ( 5% off )");
 
         }
-    }
 
-    public static void main(String[] args) {
-        GoodSheesh();
-        order();
+        public static void list1() {
+            switch (choose) {
+                case 1 ->
+                    System.out.println(quantity + "SHABU");
+                case 2 ->
+                    System.out.println(quantity + "MARIJUANA");
+                case 3 ->
+                    System.out.println(quantity + "COCAINE");
+                case 4 ->
+                    System.out.println(quantity + "RUGBY");
+                case 5 ->
+                    System.out.println(quantity + "VULCA");
+                default -> {
+                }
+            }
+        }
+
+        public static void list2() {
+            switch (choose) {
+                case 1 ->
+                    System.out.println(quantity + "SHABU");
+                case 2 ->
+                    System.out.println(quantity + "MARIJUANA");
+                case 3 ->
+                    System.out.println(quantity + "COCAINE");
+                case 4 ->
+                    System.out.println(quantity + "RUGBY");
+                case 5 ->
+                    System.out.println(quantity + "VULCA");
+                default -> {
+                }
+            }
+        }
+
+        public static void list3() {
+            switch (choose) {
+                case 1 ->
+                    System.out.println(quantity + "SHABU");
+                case 2 ->
+                    System.out.println(quantity + "MARIJUANA");
+                case 3 ->
+                    System.out.println(quantity + "COCAINE");
+                case 4 ->
+                    System.out.println(quantity + "RUGBY");
+                case 5 ->
+                    System.out.println(quantity + "VULCA");
+                default -> {
+                }
+            }
+        }
+
+        public static void list4() {
+            switch (choose) {
+                case 1 ->
+                    System.out.println(quantity + "SHABU");
+                case 2 ->
+                    System.out.println(quantity + "MARIJUANA");
+                case 3 ->
+                    System.out.println(quantity + "COCAINE");
+                case 4 ->
+                    System.out.println(quantity + "RUGBY");
+                case 5 ->
+                    System.out.println(quantity + "VULCA");
+                default -> {
+                }
+            }
+        }
+
+        public static void list5() {
+            switch (choose) {
+                case 1 ->
+                    System.out.println(quantity + "SHABU");
+                case 2 ->
+                    System.out.println(quantity + "MARIJUANA");
+                case 3 ->
+                    System.out.println(quantity + "COCAINE");
+                case 4 ->
+                    System.out.println(quantity + "RUGBY");
+                case 5 ->
+                    System.out.println(quantity + "VULCA");
+                default -> {
+                }
+            }
+        }
+
+        public static void order() {
+            System.out.println("");
+            System.out.println("Enter 6: CANCEL");
+            System.out.println("WHAT IS YOUR ORDER?: ");
+            choose = input.nextInt();
+            System.out.println("");
+
+            switch (choose) {
+
+                case 1:
+                    System.out.println("You chose SHABU");
+                    System.out.println("HOW MANY?: ");
+                    quantity = input.nextInt();
+                    total = total + (quantity * 5000);
+                    break;
+
+                case 2:
+                    System.out.println("You chose Beluga MARIJUANA");
+                    System.out.println("HOW MANY?: ");
+                    quantity = input.nextInt();
+                    total = total + (quantity * 2000);
+                    break;
+
+                case 3:
+                    System.out.println("You chose Fourchu COCAINE");
+                    System.out.println("HOW MANY?: ");
+                    quantity = input.nextInt();
+                    total = total + (quantity * 3000);
+                    break;
+
+                case 4:
+                    System.out.println("You chose RUGBY");
+                    System.out.println("HOW MANY?: ");
+                    quantity = input.nextInt();
+                    total = total + (quantity * 50);
+                    break;
+
+                case 5:
+                    System.out.println("You chose VULCA SEAL");
+                    System.out.println("HOW MANY?: ");
+                    quantity = input.nextInt();
+                    total = total + (quantity * 150);
+                    break;
+
+                case 6:
+                    System.exit(0);
+
+                default:
+                    System.out.println("INVALID PARAMETER");
+                    order();
+                    break;
+            }
+
+            if (total >= 10000) {
+                System.out.println("You have 1 set of paraphernalia tools");
+            }
+            if (total >= 20000) {
+                System.out.println("You have 1 set of paraphernalia and 1 box of Flakka Drugs(exclusive)!");
+            }
+
+            System.out.println("");
+            System.out.println("DO YOU WANNA BUY MORE?");
+            System.out.print("Enter [1] if Yes and [2] if No: ");
+            again = input.next();
+            if (again.equalsIgnoreCase("1")) {
+                order();
+            } else {
+                System.out.println("Discounts Available");
+                System.out.println(" Discount 1 - Membership discount ( 10% off )");
+                System.out.println(" Discount 2 - First Purchase discount ( 5% off )");
+                System.out.println(" Note: Discounts cannot be stacked");
+                System.out.println("");
+                System.out.println("Press 3 if none");
+                System.out.print("Enter discount number: ");
+                discount = input.nextInt();
+                if (discount == 1) {
+                    total = total * 0.90;
+                }
+                if (discount == 2) {
+                    total = total * 0.95;
+                }
+                if (discount == 3) {
+                    System.out.println("No discount");
+                    total = total - 0;
+                }
+                do {
+                    System.out.println("");
+                    System.out.println("TOTAL PRICE IS $ " + total + "0");
+                    System.out.print("Enter Cash: ");
+                    pay = input.nextDouble();
+
+                    if (pay < total) {
+                        System.out.println("INSUFFICIENT CASH, PLEASE ADD");
+                        System.out.print("Enter Cash: ");
+                        pay = input.nextDouble();
+
+                    }
+
+                } while (pay < total);
+                if (pay >= total) {
+                    total = pay - total;
+                    System.out.println("TOTAL CHANGE IS $" + total + "0");
+                }
+                System.out.println("DO YOU WANNA BUY AGAIN?");
+                System.out.print("Enter [1] if Yes and [2] if No: ");
+                choose = input.nextInt();
+                if (choose == 1) {
+                  System.out.println("=========================================");
+            System.out.println("1. SHABU       $. 5000");
+            System.out.println("2. MARIJUANA        $. 2000");
+            System.out.println("3. COCAINE      $. 3000");
+            System.out.println("4. RUGBY           $. 50");
+            System.out.println("5. VULCA SEAL   $. 150");
+            System.out.println("=========================================");
+            System.out.println("");
+            System.out.println("PROMOS");
+            System.out.println("Total order of $ 10000 or more, get 1 set of paraphernalia toolss");
+            System.out.println("Total order of $ 20000 or more, get 1 set of paraphernalia and 1 box of Flakka Drugs");
+            System.out.println(" NOTE: You can only get Flakka Drugs when you avail on our promo");
+            System.out.println(" You can avail both promos at the same time.");
+            System.out.println("");
+            System.out.println("DISCOUNTS");
+            System.out.println("D1 - Membership discount ( 10% off )");
+            System.out.println("D2 - First purchase discount ( 5% off )");
+                    total = total - total;
+                    order();
+                } else {
+                    System.exit(0);
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            GOODSHEESH();
+            order();
+        }
+
     }
-}
