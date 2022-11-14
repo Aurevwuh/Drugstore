@@ -1,14 +1,26 @@
-ackage StoreToAnotherDimension;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
+ */
+
+package com.mycompany.test;
+
 import java.util.Scanner;
 
-public class StoreToAnotherDimension {
-        public static Scanner input = new Scanner(System.in);
+/**
+ *
+ * @author ADMIN
+ */
+public class Test {
+ public static Scanner input = new Scanner(System.in);
         public static String again;
         public static int discount = 1;
         public static int choose, quantity = 1;
         public static double total = 0, pay;
-
-        public static void GOODSHEESH() {
+        
+        
+        
+         public static void GOODSHEESH() {
 
             System.out.println("=========================================");
             System.out.println("1. SHABU       $. 5000");
@@ -118,7 +130,7 @@ public class StoreToAnotherDimension {
         public static void order() {
             System.out.println("");
             System.out.println("Enter 6: CANCEL");
-            System.out.println("WHAT IS YOUR ORDER?: ");
+            System.out.print("WHAT IS YOUR ORDER?: ");
             choose = input.nextInt();
             System.out.println("");
 
@@ -126,35 +138,35 @@ public class StoreToAnotherDimension {
 
                 case 1:
                     System.out.println("You chose SHABU");
-                    System.out.println("HOW MANY?: ");
+                    System.out.print("HOW MANY?: ");
                     quantity = input.nextInt();
                     total = total + (quantity * 5000);
                     break;
 
                 case 2:
                     System.out.println("You chose Beluga MARIJUANA");
-                    System.out.println("HOW MANY?: ");
+                    System.out.print("HOW MANY?: ");
                     quantity = input.nextInt();
                     total = total + (quantity * 2000);
                     break;
 
                 case 3:
                     System.out.println("You chose Fourchu COCAINE");
-                    System.out.println("HOW MANY?: ");
+                    System.out.print("HOW MANY?: ");
                     quantity = input.nextInt();
                     total = total + (quantity * 3000);
                     break;
 
                 case 4:
                     System.out.println("You chose RUGBY");
-                    System.out.println("HOW MANY?: ");
+                    System.out.print("HOW MANY?: ");
                     quantity = input.nextInt();
                     total = total + (quantity * 50);
                     break;
 
                 case 5:
                     System.out.println("You chose VULCA SEAL");
-                    System.out.println("HOW MANY?: ");
+                    System.out.print("HOW MANY?: ");
                     quantity = input.nextInt();
                     total = total + (quantity * 150);
                     break;
@@ -207,7 +219,7 @@ public class StoreToAnotherDimension {
                     pay = input.nextDouble();
 
                     if (pay < total) {
-                        System.out.println("INSUFFICIENT CASH, PLEASE ADD");
+                        System.out.println("INSUFFICIENT CASH, PLEASE ENTER THE EXACT AMOUNT");
                         System.out.print("Enter Cash: ");
                         pay = input.nextDouble();
 
@@ -240,14 +252,14 @@ public class StoreToAnotherDimension {
             System.out.println("D1 - Membership discount ( 10% off )");
             System.out.println("D2 - First purchase discount ( 5% off )");
                     total = total - total;
-                    order();
+                    GOODSHEESH();
                 } else {
                     System.exit(0);
                 }
             }
         }
 
-        public static void main(String[] args) {
+     public static void main(String[] args) {
             GOODSHEESH();
             order();
         }
